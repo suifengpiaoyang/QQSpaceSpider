@@ -18,8 +18,8 @@ spider.download_picture(target_qq, include_list=None, exclude_list=None, exclude
 里面几个可选参数的含义：  
 * include_list：包含列表。只下载列表里相册名的图片，相册名需与 QQ 空间的相同。  
 * exclude_list：排除列表。不下载列表里相册明的图片，相册名需与 QQ 空间的相同。  
-* exclude_key:排除关键词。不下载含有该关键词的相册名的图片。  
-* name_mode:图片的命名方式，目前暂只有一个模式。 
+* exclude_key：排除关键词。不下载含有该关键词的相册名的图片。  
+* name_mode：图片的命名方式，目前暂只有一个模式。 
 #### Example:
 下载所有图片
 ```python
