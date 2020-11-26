@@ -5,7 +5,8 @@
 * 支持断点下载，可以随意运行或停止脚本，脚本将会自动检测需要下载的图片。
 ## 使用方式：
 1. 设置好 SAVE_PATH ，如果放空，则保存在当前路径下。 
-2. 在 chrome 上登录 QQ 空间，将已经成功登录的整个 headers 复制进 headers.txt 里面，不包括前面带 : 的参数
+2. 在浏览器上登录 QQ 空间，将已经成功登录的 cookie 复制进 cookies.txt 里面。  
+至于如何从浏览器获得 cookie ，请自行搜索。
 3. 填写好 spider.download_picture ，可以顺序填写多个。
 4. 运行脚本
 
@@ -35,7 +36,7 @@ spider.download_picture('XXXXXXXX', exclude_key='test')
 
 ## 未完善之处：
 * 对有密码验证的相册支持不好，可能会报错。目前没有多加测试。
-* 还是使用 cookie.txt 登录比用 headers.txt 登录好，适应性更强
+* 如果 QQ 相册中有视频，这部分还没完善。
 
 ## 总论：
 雄兔脚扑朔，雌兔眼迷离。双兔傍地走，安能辨我是雄雌？
