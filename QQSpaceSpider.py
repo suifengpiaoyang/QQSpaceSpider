@@ -127,8 +127,8 @@ class QQSpaceSpider:
             elif exclude_key:
                 if exclude_key in title:
                     continue
-            self.get_pic_url_list(target_qq, topic_id, name_mode)
-            time.sleep(1)
+            # self.get_pic_url_list(target_qq, topic_id, name_mode)
+            # time.sleep(1)
 
     def get_pic_url_list(self, target_qq, topic_id, name_mode=1):
         url = 'https://h5.qzone.qq.com/proxy/domain/photo.qzone.qq.com/fcgi-bin/cgi_list_photo?'
@@ -266,8 +266,23 @@ class QQSpaceSpider:
         return flag & 0x7fffffff
 
     def set_headers(self):
-        headers = self.format_headers('headers.txt')
+        # headers = self.format_headers('headers.txt')
+        headers = {'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+                   'accept-encoding': 'gzip, deflate, br',
+                   'accept-language': 'zh-CN,zh;q=0.9',
+                   'cache-control': 'max-age=0',
+                   'referer': 'https://i.qq.com/',
+                   'sec-fetch-dest': 'document',
+                   'sec-fetch-mode': 'navigate',
+                   'sec-fetch-site': 'same-site',
+                   'sec-fetch-user': '?1',
+                   'upgrade-insecure-requests': '1',
+                   'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:83.0) Gecko/20100101 Firefox/83.0'
+                   }
         self.s.headers.update(headers)
+        with open('cookies.txt')as fl:
+            cookie = fl.read().strip()
+        self.s.headers['cookie'] = cookie
 
     def set_cookies(self):
         cookies_dict = self.format_cookies('cookies.txt')
